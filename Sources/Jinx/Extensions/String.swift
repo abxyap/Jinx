@@ -9,7 +9,7 @@ import Darwin.POSIX
 
 public extension String {
     func withRootPath() -> String {
-   Self.rootPath + self
+    self
     }
     
     func resolvingSymlinks() -> String {
