@@ -10,7 +10,8 @@ import Darwin.POSIX
 public extension String {
     func withRootPath() -> String {
         #if JINX_ROOTLESS
-        ("/rootfs" + self).resolvingSymlinks()
+     //   ("/var/jb" + self).resolvingSymlinks()
+          ("/" + self).resolvingSymlinks()
         #else
         self
         #endif
