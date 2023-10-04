@@ -6,6 +6,7 @@
 //
 
 import CoreFoundation
+import roothide
 
 public struct JinxPreferences {
     public init(
@@ -14,7 +15,7 @@ public struct JinxPreferences {
         let cfDomain: CFString = getCFString(from: domain)
 
         if isSandboxed() {
-            dict = readPlist(for: "/var/mobile/Library/Preferences/\(domain).plist".withRootPath()) ?? [:]
+            dict = readPlist(for: jbroot("/var/mobile/Library/Preferences/\(domain).plist")) ?? [:]
         } else {
             let keyList: CFArray = CFPreferencesCopyKeyList(
                 cfDomain,
