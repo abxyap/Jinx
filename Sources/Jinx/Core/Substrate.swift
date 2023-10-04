@@ -5,6 +5,8 @@
 //  Created by Lilliana on 08/05/2023.
 //
 
+import roothide
+
 struct Substrate {
     let hook: RebindHook
     
@@ -27,5 +29,5 @@ struct Substrate {
     private typealias T0 = @convention(c) (OpaquePointer?, UnsafePointer<Int8>) -> UnsafeMutableRawPointer?
     private typealias T1 = @convention(c) (UnsafeMutableRawPointer, UnsafeRawPointer, UnsafeMutablePointer<UnsafeMutableRawPointer?>) -> Void
     
-    private static let substratePath: String = "/usr/lib/libsubstrate.dylib".withRootPath()
+    private static let substratePath: String = jbroot("/usr/lib/libsubstrate.dylib")
 }
