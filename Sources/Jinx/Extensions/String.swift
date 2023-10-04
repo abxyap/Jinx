@@ -11,7 +11,7 @@ public extension String {
     func withRootPath() -> String {
         #if JINX_ROOTLESS
      //   ("/var/jb" + self).resolvingSymlinks()
-          ("/" + self).resolvingSymlinks()
+        self
         #else
         self
         #endif
